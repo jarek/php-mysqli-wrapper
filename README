@@ -1,0 +1,6 @@
+This is a basic wrapper class for mysqli, the not-insane way of accessing MySQL in PHP.
+
+Handles connections, properly binds parameters, parses responses into associative arrays.
+See comments at the top of db.php for functionality and documentation.
+
+Released under the ISC license.
