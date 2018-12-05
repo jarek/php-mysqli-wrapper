@@ -54,15 +54,15 @@
 		please tread carefully. Behaviour with non-transactional databases is undefined. Please don't use MyISAM.
 		
 	Authors:
-		Originally written in 2009 for the Take the GRT project by Jarek Piórkowski.
+		Originally written in 2009 for the Take the GRT project by Jarek PiÃ³rkowski.
 		
-		Amended and updated in 2011 by Jarek Piórkowski for Blast Radius for a client project.
+		Amended and updated in 2011 by Jarek PiÃ³rkowski for Blast Radius for a client project.
 		Permission has been granted to Blast Radius to freely reuse, improve, amend, rewrite, 
 		and otherwise modify the class as required, in perpetuity, without credit being mandatory.
 		
 		Distribution and use outside of Blast Radius projects is subject to the ISC license:
 		
-		Copyright (c) 2009-2012, Jarek Piórkowski <jarek@piorkowski.ca>
+		Copyright (c) 2009-2012, Jarek PiÃ³rkowski <jarek@piorkowski.ca>
 		
 		Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, 
 		provided that the above copyright notice and this permission notice appear in all copies.
@@ -90,7 +90,7 @@ class Database
 		
 		// enable unicode
 		// http://dev.mysql.com/doc/refman/5.0/en/charset-connection.html
-		// SET NAMES 'cp1251' tells the server, “future incoming messages from this client are in character set cp1251.” 
+		// SET NAMES 'cp1251' tells the server, â€œfuture incoming messages from this client are in character set cp1251.â€ 
 		// It also specifies the character set that the server should use for sending results back to the client. 
 		// (For example, it indicates what character set to use for column values if you use a SELECT statement.)
 		$this->Alter('SET NAMES \'utf8\';');
@@ -157,7 +157,7 @@ class Database
 			
 				for ($i = 1; $i < $num_params; ++$i)
 				{
-					$this_param = func_get_arg($i);
+					$this_param = mysql_escape_string(func_get_arg($i));
 					self::AddParameter($params, $types, $this_param);
 				}
 
